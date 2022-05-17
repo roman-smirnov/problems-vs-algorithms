@@ -3,7 +3,7 @@ Find the square root of the integer without using any Python library
 """
 
 
-def sqrt(number):
+def sqrt(number: int):
     """
     Calculate the floored square root of a number
 
@@ -12,7 +12,18 @@ def sqrt(number):
     Returns:
        int: Floored Square Root
     """
-    pass
+    # This is a binary search problem
+    high = number + 1
+    low = 0
+
+    while low < high-1:
+        mid = int((high + low) / 2)
+        if mid**2 > number:
+            high = mid
+        else:
+            low = mid
+        print(low, mid, high)
+    return low
 
 
 if __name__ == '__main__':
@@ -21,4 +32,3 @@ if __name__ == '__main__':
     print("Pass" if (4 == sqrt(16)) else "Fail")
     print("Pass" if (1 == sqrt(1)) else "Fail")
     print("Pass" if (5 == sqrt(27)) else "Fail")
-   
