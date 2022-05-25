@@ -29,6 +29,22 @@ Therefore, the overall worst case runtime complexity of our algorithm is O(n).
 ### Space Complexity
 The algorithm performs the sort in-place, hence its space complexity is O(n).
 
+## Autocomplete with Tries
+We store the characters in the trie data structure and perform search operation on it
+### Time Complexity
+All operations on the trie are done in O(n) time
+### Space Complexity
+The trie, and therefore the overall, space complexity is O(n)
+
+
+## Max and Min in a Unsorted Array
+We traverse the list and simultaneously maintain the current argmax  and argmin of the array
+### Time Complexity
+We perform a single pass over the array, hence the runtime complexity is O(n) 
+### Space Complexity
+The space complexity is O(n) since we do not store anything beyond the array itself and a few extra constant variables/
+
+
 ## Http Router
 Our path routing algorithm breaks down a path to its inidiviual parts and utilizes a triep data structure for storage and search. 
 ### Time Complexity
