@@ -14,6 +14,12 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
+
+    if input_list is None:
+        raise ValueError('input_list should not be None')
+    if not input_list:
+        raise ValueError('input_list should not be empty')
+
     input_list = input_list.copy()
     low = 0
     mid = 0
@@ -43,15 +49,31 @@ def test_function(test_case):
         print("Fail")
 
 
+def none_test():
+    try:
+        sort_012(None)
+    except Exception as e:
+        print(e)  # should print 'input_list should not be None'
+
+
+def empty_test():
+    try:
+        sort_012([])
+    except Exception as e:
+        print(e)  # should print 'input_list should not be Empty'
+
+
 def my_test():
     inlist = [0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2]
     outlist = sort_012(inlist)
-    print(inlist)
-    print(outlist)
+    # print(inlist)
+    # print(outlist)
 
 
 if __name__ == '__main__':
-    # my_test()
+    none_test()
+    empty_test()
+    my_test()
     test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
     test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
     test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
