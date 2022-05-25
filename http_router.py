@@ -1,11 +1,6 @@
 """ HTTPRouter using a Trie """
 
 
-# Starting at the root, navigate the Trie to find a match for this path
-# Return the handler for a match, or None for no match
-
-
-# A RouteTrieNode will be similar to our autocomplete TrieNode... with one additional element, a handler.
 class RouteTrieNode:
 
     def __init__(self) -> None:
