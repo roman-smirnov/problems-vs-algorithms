@@ -12,7 +12,7 @@ We divide the array into 2 sorted subarrays and use binary search to find the re
 ### Time Complexity
 Our algorithm utilizes several applications of binary search, therefore the overall time complexity if O(log(n))
 ### Space Complexity
-0The space complexity is as large as the input array, hence its O(n) at the worst case
+The space complexity is O(1) at the worst case because we've used a constant number of variable 
 
 ## Rearrange Array Digits
 Our algorithm makes use of a min-heap data structure to extract the lowest digit and iteratively construct the two output numbers.
@@ -27,22 +27,21 @@ Our algorithm sorts the trinary array in a single transversal by maintaining, an
 Our algorithm performs a single pass over the input array, plus a number of swaps which is at worst the size of the input.
 Therefore, the overall worst case runtime complexity of our algorithm is O(n).
 ### Space Complexity
-The algorithm performs the sort in-place, hence its space complexity is O(n).
+The algorithm performs the sort in-place and only uses a constant number of variables, hence its space complexity is O(1).
 
 ## Autocomplete with Tries
 We store the characters in the trie data structure and perform search operation on it
 ### Time Complexity
 All operations on the trie are done in O(n) time
 ### Space Complexity
-The trie, and therefore the overall, space complexity is O(n)
-
+We construct and hold the trie separately from the input string. Therefore, the overall space complexity is O(n).
 
 ## Max and Min in a Unsorted Array
 We traverse the list and simultaneously maintain the current argmax  and argmin of the array
 ### Time Complexity
 We perform a single pass over the array, hence the runtime complexity is O(n) 
 ### Space Complexity
-The space complexity is O(n) since we do not store anything beyond the array itself and a few extra constant variables/
+The space complexity is O(1) since we do not store anything beyond the input array itself and an extra constant number of variables variables.
 
 
 ## Http Router
@@ -51,5 +50,5 @@ Our path routing algorithm breaks down a path to its inidiviual parts and utiliz
 Each individual part of our algorithm (split_path(), trie find(), etc) have O(n)  time complexity, where n is the number of parts in the input path.
 Therefore, the overall worst case time complexity is O(n).
 ### Space Complexity
-The worst case space complexity is O(n), where n is the number of parts in the path, due to our use of a trie to store the individual parts.
+Sinc build and store all the characters in the path as path part string in a trie, the worst case space complexity is O(n), where n is the number of characters in the input path.
 
