@@ -16,8 +16,8 @@ def sqrt(number: int):
         raise ValueError('number must not be None')
     if not isinstance(number, int):
         raise ValueError('number must be an int')
-
-    # This is a binary search problem
+    if number < 0:
+        raise ValueError('number must be non-negative')
     high = number + 1
     low = 0
 
@@ -44,6 +44,19 @@ def int_test():
         print(e)  # shoud print 'number must be an int'
 
 
+def large_test():
+    num = int(8935871093876)
+    print('the square root of a really large nuber', num, 'is:', sqrt(num))
+    # should print 'the square root of a really large nuber 8935871093876 is: 2989292'
+
+
+def neg_test():
+    try:
+        sqrt(-4)
+    except Exception as e:
+        print(e)  # shoud print 'number must be non-negative'
+
+
 def zero_test():
     print("Pass" if (0 == sqrt(0)) else "Fail")  # shoud print 'Pass'
 
@@ -61,5 +74,8 @@ def provided_tests():
 if __name__ == '__main__':
     none_test()
     int_test()
+    large_test()
+    neg_test()
+    zero_test()
     one_test()
     provided_tests()

@@ -95,6 +95,22 @@ def split_path_test():
     router.split_path("/")
 
 
+def router_root_none_test():
+    try:
+        router = Router(None, "not found handler")
+        print('Fail')
+    except Exception as e:
+        print('Pass')
+
+
+def router_handler_none_test():
+    try:
+        router = Router('root handler', None)
+        print('Fail')
+    except Exception as e:
+        print('Pass')
+
+
 def test1():
     print('\n================================ test1() ================================')
     router = Router("root handler", "not found handler")
@@ -163,6 +179,8 @@ def provided_test():
 
 if __name__ == '__main__':
     # split_path_test()
+    router_root_none_test()
+    router_handler_none_test()
     test1()
     test2()
     test3()

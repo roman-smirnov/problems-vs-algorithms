@@ -70,9 +70,27 @@ def my_test():
     # print(outlist)
 
 
+def single_test():
+    print(sort_012([0]))  # should print '[0]'
+
+
+def duo_test():
+    print(sort_012([1, 0]))  # should print '[0.1]'
+    print(sort_012([2, 0]))  # should print '[0.2]'
+    print(sort_012([2, 1]))  # should print '[1.2]'
+
+
+def large_test():
+    array = [i % 3 for i in range(100000)]
+    print('Pass') if sort_012(array) == sorted(array) else print('Fail')    # should print 'Pass'
+
+
 if __name__ == '__main__':
     none_test()
     empty_test()
+    single_test()
+    duo_test()
+    large_test()
     my_test()
     test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
     test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
